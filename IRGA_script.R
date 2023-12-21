@@ -23,7 +23,7 @@ dir <- dirname(getActiveDocumentContext()$path)                         # This g
 # dir <- ".../folder/"                                                  # Or you can use this by adding path to your folder containing the data
 setwd(paste0(dir))                                                      # Set your working directory
 
-df <- read.csv(paste0(dir, "/CO2_data.csv"))                            # Change "read.csv" to "read_excel" if your files are .xlsx AND ".csv" to filetype, e.g. ".xlsx"
+df <- read.csv(paste0(dir, "/IRGA_data.csv"))                           # Change "read.csv" to "read_excel" if your files are .xlsx AND ".csv" to filetype, e.g. ".xlsx"
                                                                         
 
 #### 2. Examine data and linearity ####
