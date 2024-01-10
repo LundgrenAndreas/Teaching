@@ -1,11 +1,17 @@
-#This is a script and example data set designed for use in the course Soil Biology and Biogeochemical Cycles (SLU)
+This is a script and example data set designed for use in the course Soil Biology and Biogeochemical Cycles (SLU)
 
-#Data
-#The data consists of CO2 measurements from an IRGA (Infra-Red Gas Analyser) for 5 different soil samples.
-#The measurements are taken every 15 seconds for 195 seconds (a total of 13 measurements per sample).
-#The measurements done during the course may differ somewhat in number of measurements and/or timining of measurements but the script should work the same.
-#For the script to work without problems, remember the following:
+Data
+
+The data consists of CO2 measurements from an IRGA (Infra-Red Gas Analyser) for 5 different soil samples.
+
+The measurements are taken every 15 seconds for 195 seconds (a total of 13 measurements per sample).
+
+The measurements done during the course may differ somewhat in number of measurements and/or timining of measurements but the script should work the same.
+
+For the script to work without problems, remember the following:
+
 You need 1 column specifying the time of the measurement (in seconds from the start of IRGA analysis) and 1 column specifying the amount of CO2 in the system at the given time of measurement (see example data set).
+
 Also, if you do calculations for several different soil samples, remember to name the ID of one sample the same way in all measurements. For example, ID "one" and "One" will be treated as two different samples because R is case sensitive
 
 Script
