@@ -3,7 +3,6 @@ This is a script and example data set designed for use in the course Soil Biolog
 Data
 
 The data consists of CO2 measurements from an IRGA (Infra-Red Gas Analyser) for 5 different soil samples.
-
 The measurements are taken every 15 seconds for 195 seconds (a total of 13 measurements per sample).
 
 The measurements done during the course may differ somewhat in number of measurements and/or timining of measurements but the script should work the same.
