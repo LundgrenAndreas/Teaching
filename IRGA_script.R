@@ -63,12 +63,12 @@ R <- 8.314 * 10^-5     #Gas constant
 TK <- 293              #Temperature in kelvin
 
 # If the measurements have individual pressure, volume, temperature; do the following
-TK <- aggregate(df$Temperature_C, list(df$Soil_ID), FUN=mean)           # Change "Temperature_C" based on what your column is called
-TK <- TK[,2]
-p <- aggregate(df$Pressure, list(df$Soil_ID), FUN=mean)                 # Change "Pressure" based on what your column is called
-p <- p[,2]
-v <- aggregate(df$Volume, list(df$Soil_ID), FUN=mean)                   # Change "Volume" based on what your column is called
-v <- v[,2]
+# TK <- aggregate(df$Temperature_C, list(df$Soil_ID), FUN=mean)           # Change "Temperature_C" based on what your column is called
+# TK <- TK[,2]
+# p <- aggregate(df$Pressure, list(df$Soil_ID), FUN=mean)                 # Change "Pressure" based on what your column is called
+# p <- p[,2]
+# v <- aggregate(df$Volume, list(df$Soil_ID), FUN=mean)                   # Change "Volume" based on what your column is called
+# v <- v[,2]
 
 # Calculate umol CO2 second-1
 CO2_umol <- (unlist(coefy)/15) * ((p * v) / (R * TK))                   # Here we apply the equation to our data
