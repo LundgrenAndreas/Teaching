@@ -73,3 +73,5 @@ TK <- 293              #Temperature in kelvin
 # Calculate umol CO2 second-1
 CO2_umol <- (unlist(coefy)/15) * ((p * v) / (R * TK))                   # Here we apply the equation to our data
 result <- as.data.frame(cbind(unique(df$Soil_ID), CO2_umol))            # Here the output called "V1" = Soil ID
+colnames(result) <- c("Soil_ID", "CO2_umol")
+View(result)
