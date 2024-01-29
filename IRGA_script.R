@@ -59,7 +59,7 @@ coefy <- lapply(mods.lin, function (x) if(!(is.na(x[1]))) {coef(x)[2]}) # Here w
 # If all measurements share the same pressure, volume, temperature; do the following
 p <- 1                 #Pressure in atm
 v <- 0.0002            #Volume in m3
-R <- 8.314 * 10^-5     #Gas constant
+R <- 8.21 * 10^-5      #Gas constant
 TK <- 293              #Temperature in kelvin
 
 # If the measurements have individual pressure, volume, temperature; do the following
@@ -71,7 +71,7 @@ TK <- 293              #Temperature in kelvin
 # v <- v[,2]
 
 # Calculate umol CO2 second-1
-CO2_umol <- (unlist(coefy)/15) * ((p * v) / (R * TK))                   # Here we apply the equation to our data
+CO2_umol <- (unlist(coefy)) * ((p * v) / (R * TK))                      # Here we apply the equation to our data
 result <- as.data.frame(cbind(unique(df$Soil_ID), CO2_umol))            # Here the output called "V1" = Soil ID
 colnames(result) <- c("Soil_ID", "CO2_umol")
 View(result)
