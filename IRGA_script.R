@@ -23,7 +23,7 @@ dir <- dirname(getActiveDocumentContext()$path)                         # This g
 # dir <- ".../folder/"                                                  # Or you can use this by adding path to your folder containing the data
 setwd(paste0(dir))                                                      # Set your working directory
 
-df <- read.csv(paste0(dir, "/IRGA_data.csv"))                           # Change "read.csv" to "read_excel" if your files are .xlsx AND ".csv" to filetype, e.g. ".xlsx"
+df <- as.data.frame(read.csv(paste0(dir, "/IRGA_data.csv")))            # Change "read.csv" to "read_excel" if your files are .xlsx AND ".csv" to filetype, e.g. ".xlsx"
                                                                         
 
 #### 2. Examine data and linearity ####
@@ -33,7 +33,9 @@ View(df)
 library(ggplot2)
 ggplot(df, aes(x=Time, y=CO2_ppm)) +                                    # Change "Time" and "CO2_ppm" based on what your columns are called
   facet_wrap(~Soil_ID, scales = "free") +                               # Change "Soil_ID" based on what your column is called
-  geom_point()
+  geom_point() +
+  geom_smooth(method = lm, se = F) +
+  stat_cor(r.accuracy = 0.0001, aes(label = after_stat(rr.label)))
 
 # Note the plateau in Soil_4
 # there will be a better linear fit if we remove the last 4 points of measurement
