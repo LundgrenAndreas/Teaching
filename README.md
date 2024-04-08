@@ -1,4 +1,4 @@
-This is a script and example data set designed for use in the course Soil Biology and Biogeochemical Cycles (SLU)
+This is a script and example dataset designed for use in the course Soil Biology and Biogeochemical Cycles (SLU)
 
 Data:
 
