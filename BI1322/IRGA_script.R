@@ -17,9 +17,9 @@
 
 #### 1. Read data - If you have all soil measurements in the same file ####
 # Find directory OR write the whole path
-library(rstudioapi)
-library(readxl)
-dir <- dirname(getActiveDocumentContext()$path)                         # This gives you path to your script's folder
+library(rstudioapi)                                                     # rstudioapi allows you to connect the working directory to the folder of the Rscript, making it faster to load data from the same folder
+library(readxl)                                                         # readxl is needed to read .xlsx type files (if you are using .csv type files, this is not a necessary package)
+dir <- dirname(getActiveDocumentContext()$path)                         # This gives you the path to your script's folder
 # dir <- ".../folder/"                                                  # Or you can use this by adding path to your folder containing the data
 setwd(paste0(dir))                                                      # Set your working directory
 
@@ -30,7 +30,8 @@ df <- as.data.frame(read.csv(paste0(dir, "/IRGA_data.csv")))            # Change
 # Look at the data to make sure everything seems to be in order
 View(df)
 # Plot the data to have a look at the linearity of your measurements
-library(ggplot2)
+library(ggplot2)                                                        # ggplot allows you to plot all our soils separately
+library(ggpubr)                                                         # ggpubr allows you to plot the R2 value of each soil using the "stat_cor" command below
 ggplot(df, aes(x=Time, y=CO2_ppm)) +                                    # Change "Time" and "CO2_ppm" based on what your columns are called
   facet_wrap(~Soil_ID, scales = "free") +                               # Change "Soil_ID" based on what your column is called
   geom_point() +
